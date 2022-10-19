@@ -1,11 +1,14 @@
+import { Text, View } from "react-native";
 import React from "react";
-import { View, Text } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const SavedRecipes = () => {
   return (
-    <View>
-      <Text>Saved Recipes</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <Text>Saved Recipes</Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
