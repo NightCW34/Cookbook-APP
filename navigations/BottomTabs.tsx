@@ -17,7 +17,9 @@ const Tab = createBottomTabNavigator();
 const BottomTabs = () => {
   return (
     <Tab.Navigator
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+      }}
       tabBar={(props) => <MyTabBar {...props} />}
     >
       <Tab.Screen name="Home" component={Home} />
@@ -114,7 +116,7 @@ const styles = StyleSheet.create({
   icon: {},
   bottomBar: {
     height: 80,
-    backgroundColor: "white",
+    backgroundColor: "#F1F1F1",
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-around",

@@ -4,11 +4,9 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const Profile = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Text>Profile</Text>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View>
+      <Text>Hola</Text>
+    </View>
   );
 };
 

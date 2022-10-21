@@ -1,14 +1,18 @@
-import { View, Text } from "react-native";
 import React from "react";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+//Custom Components
+import Title from "../components/Home/Title";
+import SearchBar from "../components/Home/SearchBar";
+import RecipeListItems from "../components/Home/RecipeListItems";
 
 const Home = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Text>Home</Text>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+      <Title />
+      <SearchBar placeholder="Search recipes" />
+      <RecipeListItems />
+    </SafeAreaView>
   );
 };
 

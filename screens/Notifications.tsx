@@ -4,11 +4,9 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const Notifications = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Text>Notifications</Text>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View>
+      <Text>Hola</Text>
+    </View>
   );
 };
 

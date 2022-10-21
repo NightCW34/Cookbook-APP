@@ -4,11 +4,9 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 const MiddleIcon = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Text>MiddleIcon</Text>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View>
+      <Text>Hola</Text>
+    </View>
   );
 };
 

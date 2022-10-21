@@ -4,11 +4,9 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const RecipeDetails = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Text>Recipe Details</Text>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View>
+      <Text>Hola</Text>
+    </View>
   );
 };
 
