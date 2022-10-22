@@ -1,13 +1,14 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
 import React from "react";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Saved from '../components/SavedRecipeBook/Saved';
 
 const SavedRecipes = () => {
   return (
-    <View>
-      <Text>Hola</Text>
-    </View>
+    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+      <Saved />
+    </SafeAreaView>
   );
 };
 
 export default SavedRecipes;
+
