@@ -1,12 +1,14 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Tostada from "../components/HowToMake/Tostada";
 
 const Notifications = () => {
   return (
-    <View>
-      <Text>Hola</Text>
-    </View>
+    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+      
+      <Tostada/>
+    </SafeAreaView>
   );
 };
 
