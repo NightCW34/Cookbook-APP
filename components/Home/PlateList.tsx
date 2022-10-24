@@ -70,6 +70,7 @@ const PlateList = () => {
           contentContainerStyle={{ paddingHorizontal: 10 }}
           stickySectionHeadersEnabled={false}
           sections={SECTIONS}
+          listKey="Plates"
           renderSectionHeader={({ section }) => (
             <>
               <RecipeSection title={section.title} />

@@ -15,6 +15,8 @@ import { Feather } from "@expo/vector-icons";
 import RecipeSection from "./RecipeSection";
 import AvatarList from "./AvatarList";
 import PlateList from "./PlateList";
+import RecentList from "./RecentList";
+import PopularAutors from "./PopularAutors";
 
 const ListItem = ({ item }: any) => {
   return (
@@ -71,6 +73,7 @@ const RecipeListItems = () => {
           contentContainerStyle={{ paddingHorizontal: 10 }}
           stickySectionHeadersEnabled={false}
           sections={SECTIONS}
+          listKey="Main"
           renderSectionHeader={({ section }) => (
             <>
               <RecipeSection
@@ -87,6 +90,8 @@ const RecipeListItems = () => {
                 />
               ) : null}
               <PlateList />
+              <RecentList />
+              <PopularAutors />
             </>
           )}
           renderItem={({ item, section }) => {
