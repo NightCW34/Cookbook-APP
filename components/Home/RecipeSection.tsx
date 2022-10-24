@@ -11,7 +11,7 @@ interface Props {
 const RecipeSection: FC<Props> = ({ title, iconName, SubTXT }) => {
   return (
     <View>
-      <View style={{ marginHorizontal: 15, flexDirection: "row" }}>
+      <View style={{ flexDirection: "row", paddingLeft: 10 }}>
         <View>
           <Text style={{ fontFamily: "Poppins_600SemiBold", fontSize: 18 }}>
             {title}

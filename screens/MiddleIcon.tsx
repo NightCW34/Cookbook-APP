@@ -1,12 +1,12 @@
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 import React from "react";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const MiddleIcon = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Hola</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -13,7 +13,10 @@ import { Entypo } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import RecipeSection from "./RecipeSection";
-import { flingGestureHandlerProps } from "react-native-gesture-handler/lib/typescript/handlers/FlingGestureHandler";
+import AvatarList from "./AvatarList";
+import PlateList from "./PlateList";
+import RecentList from "./RecentList";
+import PopularAutors from "./PopularAutors";
 
 const ListItem = ({ item }: any) => {
   return (
@@ -25,15 +28,8 @@ const ListItem = ({ item }: any) => {
           }}
           style={styles.itemPhoto}
           imageStyle={{ borderRadius: 10 }}
-          resizeMode="cover"
         >
-          <View
-            style={{
-              width: "100%",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <View style={styles.rating}>
               <AntDesign name="star" size={15} color="white" />
               <Text style={styles.rate_text}>{item.rating}</Text>
@@ -59,6 +55,7 @@ const ListItem = ({ item }: any) => {
       <View style={{ flexDirection: "row" }}>
         <View>
           <Text style={styles.itemText}>{item.text}</Text>
+          <AvatarList name={item.user} avatar={item.avatar} />
         </View>
         <View style={{ flex: 1, alignItems: "flex-end" }}>
           <Feather name="more-horizontal" size={24} color="black" />
@@ -76,6 +73,7 @@ const RecipeListItems = () => {
           contentContainerStyle={{ paddingHorizontal: 10 }}
           stickySectionHeadersEnabled={false}
           sections={SECTIONS}
+          listKey="Main"
           renderSectionHeader={({ section }) => (
             <>
               <RecipeSection
@@ -91,6 +89,9 @@ const RecipeListItems = () => {
                   showsHorizontalScrollIndicator={false}
                 />
               ) : null}
+              <PlateList />
+              <RecentList />
+              <PopularAutors />
             </>
           )}
           renderItem={({ item, section }) => {
@@ -120,6 +121,8 @@ const SECTIONS = [
         uri: "https://www.lavanguardia.com/files/og_thumbnail/uploads/2019/10/15/5e9977d4903ac.jpeg",
         rating: "4,5",
         time: "17:24",
+        user: "James Bond",
+        avatar: "https://randomuser.me/api/portraits/men/43.jpg",
       },
       {
         key: "2",
@@ -127,6 +130,8 @@ const SECTIONS = [
         uri: "https://parade.com/.image/t_share/MTkwNTc4MzQwODAyNjAyMTA5/hamburger-with-fries-and-vegetables.jpg",
         rating: "4,6",
         time: "15:04",
+        user: "Luis Fries",
+        avatar: "https://randomuser.me/api/portraits/men/26.jpg",
       },
 
       {
@@ -135,6 +140,8 @@ const SECTIONS = [
         uri: "https://cdn.pixabay.com/photo/2017/10/09/19/29/eat-2834549_960_720.jpg",
         rating: "4,3",
         time: "13:00",
+        user: "Diana Smith",
+        avatar: "https://randomuser.me/api/portraits/women/26.jpg",
       },
       {
         key: "4",
@@ -142,6 +149,8 @@ const SECTIONS = [
         uri: "https://cdn.pixabay.com/photo/2015/08/31/23/42/cake-916253_960_720.jpg",
         rating: "4,0",
         time: "12:34",
+        user: "Angelica Cruz",
+        avatar: "https://randomuser.me/api/portraits/women/71.jpg",
       },
       {
         key: "5",
@@ -149,6 +158,8 @@ const SECTIONS = [
         uri: "https://cdn.pixabay.com/photo/2016/02/24/03/04/chicken-1218968_960_720.jpg",
         rating: "4,9",
         time: "11:30",
+        user: "Chana Smith",
+        avatar: "https://randomuser.me/api/portraits/women/66.jpg",
       },
     ],
   },
@@ -158,7 +169,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
   item: {
     margin: 10,
   },
@@ -194,7 +204,6 @@ const styles = StyleSheet.create({
   rate_text: {
     color: "white",
     fontFamily: "Poppins_600SemiBold",
-    paddingTop: 5,
     paddingHorizontal: 5,
   },
   time: {
@@ -210,7 +219,7 @@ const styles = StyleSheet.create({
   play_button: {
     justifyContent: "center",
     alignItems: "center",
-    height: 100,
+    height: "55%",
   },
   bookmark: {
     alignItems: "flex-end",
@@ -224,5 +233,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginRight: 10,
+    marginTop: 10,
   },
 });
