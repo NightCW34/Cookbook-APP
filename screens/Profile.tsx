@@ -5,11 +5,9 @@ import DescriptionProfile from "../components/MyProfile/DescriptionProfile";
 
 const Profile = () => {
   return (
-    <View>
-      <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
-        <DescriptionProfile />
-      </SafeAreaView>
-    </View>
+    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+      <DescriptionProfile />
+    </SafeAreaView>
   );
 };
 
