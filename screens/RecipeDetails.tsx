@@ -5,11 +5,9 @@ import Tostada from "../components/HowToMake/Tostada";
 
 const RecipeDetails = () => {
   return (
-      <View>
-        <Text>
-          Nada
-        </Text>
-      </View>
+    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+      <RecipeDetails />
+    </SafeAreaView>
   );
 };
 
